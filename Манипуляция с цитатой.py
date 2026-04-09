@@ -1,0 +1,15 @@
+quote = 'Думаю, на мировом рынке можно будет продать штук пять компьютеров.'
+print('Исходная цитата')
+print(quote)
+print('\nОна же в верхнем регистре:')
+print(quote.upper())
+print('\nв нижнем регистре:')
+print(quote.lower())
+print('\nкак заголовок:')
+print(quote.title())
+print('\nС ма-а-аленькой заменой:')
+print(quote.replace('штук пять', 'несколько миллионов'))
+print(quote.swapcase())
+print(quote.strip())
+input('\n\n\t\t\tPress Enter to key for exit')
+

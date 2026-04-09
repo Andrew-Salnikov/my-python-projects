@@ -1,0 +1,7 @@
+name = input('Привет, как тебя зовут?')
+print(f'Приятно познакомиться,{name}!' )
+dol = int(input('Какой сейчас курс доллара к рублю?'))
+dol_n = int(input('И сколько есть рублей у тебя?'))
+rub = (dol_n//dol)
+print(f'{name}, у тебя ровно {rub} долларов!')
+input('press Enter to key for exit')
