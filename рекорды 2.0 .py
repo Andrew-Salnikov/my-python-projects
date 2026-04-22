@@ -2,33 +2,28 @@
 # демонстрирует вложенные последовательности
 scores = []
 choice = None
-while choice != '0' :
-    print(
-    '''
-    Рекорды 2.0
-    0 - Выйти
-    1 - Показать рекорды
-    2 - Добавить рекорды
-    '''
-    )
-    choice = input('Ваш выбор: ')
-    print()
-
-    if choice == '0':
+print('''
+      Рекорды 2.0
+      0 - Выйти
+      1 - Показать рекорд
+      2 - Добавить рекорд
+      ''')
+while choice != 0:
+    choice = int(input('\nВведите ваш выбор: '))
+    if choice == 0:
         print('До свидания!')
-    elif choice == '1':
-        print('Рекорды\n')
-        print('ИМЯ\tРЕЗУЛЬТАТ')
-        for entry in scores:
-            score, name = entry
-            print(f'{name} \t{score}')
-    elif choice == '2':
-        name = input('Впишите имя игрока: ')
-        score = int(input('Введите его результат: '))
-        entry = (score, name)
-        scores.append(entry)
+    elif choice == 1:
+        print('ИМЯ\tРЕКОРД')
+        for score in scores:
+            name, rez = score
+            print(f'{name}\t{rez}')
+    elif choice == 2:
+        name = input('Введите имя рекордсмена: ')
+        rez = int(input('Введите его результат: '))
+        score = (rez, name)
+        scores.append(score)
         scores.sort(reverse=True)
+        scores = scores[:5]
     else:
-        print('Извинте, но нет такого пункта!')
-
+        print('Не верный выбор! ')
 input('Press Enter to exit')
