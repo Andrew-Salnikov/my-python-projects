@@ -1,10 +1,12 @@
 import random
 letter = "qwertyuiopasdfghjklzxcvbnm"
-number = "1234567890"
-symbol = "!@#$%^&*()-/"
+number = "1234578"
 letter_u = "QWERTYUIOPASDFGHJKLZXCVBNM"
-all = letter + number + symbol + letter_u
+symbol = "!@#$%^&*"
+all = letter + number + letter_u + symbol
 password = ""
-for i in range(12):
+x = int(input("Введите длину желаемого пароля: "))
+for i in range(x):
     password += random.choice(all)
-print(password)
+
+print(f"Ваш сгенерированный пароль: {password} . ")
