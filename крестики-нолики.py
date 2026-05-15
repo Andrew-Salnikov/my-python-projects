@@ -24,6 +24,7 @@ def display_instruct():
     Приготовься к бою!
     """
     )
+
 def ask_yes_no(question):
     """Задает вопрос да или нет"""
     response = None
@@ -36,7 +37,7 @@ def ask_number(question, low, high):
     response = None
     while response not in range(low,high):
         response = int(input(question))
-    return question
+    return response
 
 def pieces():
     """Определяет принадлежгность первого хода"""
@@ -97,7 +98,7 @@ def human_move(board, human):
     legal = legal_moves(board)
     move = None
     while move not in legal:
-        move = ask_number("Твой ход. Выбери одно из полей 0-8 ", O, NUM_SQUADES)
+        move = ask_number("Твой ход. Выбери одно из полей 0-8 ", 0, NUM_SQUADES)
         if move not in legal:
             print("Это поле уже занято!\n")
     print("Ладно..")
@@ -109,7 +110,7 @@ def computer_move(board, computer, human):
     board = board [:]
     # Поля от лучшего к худшему
     BEST_MOVES = (4, 0, 2, 6, 8, 1, 3, 5, 7)
-    print("Я выберу поле номер", end="")
+    print("Я выберу поле номер ", end="")
     for move in legal_moves(board):
         board[move] = computer
     # если следующим ходом может победить ПК, выберем это
