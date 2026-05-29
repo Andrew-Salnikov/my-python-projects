@@ -29,5 +29,13 @@ print(len(lines))
 for line in lines:
     print(line)
 file.close()
+print("\nПеребираю файл построчно: ")
+file = open("read_it.txt", "r", encoding = 'utf-8')
+for line in file:
+    print(line)
+file.close()
+
+input("\n\nPress Enter to exit")
+
 
 
